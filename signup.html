@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <!-- Webpage title -->
+    <title>Fiber Starter Sign Up Page</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <!-- Main CSS Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main>
+        <section class="form-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">Fiber</a>
+        
+            <div class="wrapper">
+                <!-- Title -->
+                <h1>Create your Fiber account</h1>
+
+                <!-- Sign Up Form -->
+                <form method="post" novalidate>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input id="name" name="name" type="text" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" placeholder="At least 8 characters" aria-describedby="hide-password">
+                        <span id="hide-password">
+                            <img src="assets/hide-password.svg" alt="hide and show password">
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input id="terms" name="terms" type="checkbox">
+                        <!-- <div class="checkbox-box"></div> -->
+                        <label for="terms">By creating an account on Fiber, you agree to the <a href="#" class="btn-secondary">Terms & Conditions</a></label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Create Fiber Account</button>
+                    
+                    <div class="signin-hint">
+                        Already have an account?
+                        <a href="#">Sign In</a>
+                    </div>
+                </form> <!-- end of sign-up form -->
+            </div> <!-- end of wrapper -->
+        </section> <!-- end of form-container -->
+
+        <section class="img-container">
+            <div class="inner-container">
+                <img src="assets/sign-up-image.png" alt="template image">
+                <h2>Unparalleled Templates</h2>
+                <p>Crafted by a team of professional designers, our templates are eunparalleled in the market.</p>
+                <ul class="bullets">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </section> <!-- end of img-container -->
+    </main> <!-- end of main -->
+
+    <!-- Scripts -->
+    <script src="js/sign-up.js"></script> <!-- Main JS File for Sign Up page -->
+</body>
+</html>
