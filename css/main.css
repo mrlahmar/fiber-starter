@@ -70,7 +70,8 @@ p {
     line-height: 1.5;
 }
 
-.container {
+.container,
+.scrollable-container {
     padding-left: 15px;
     padding-right: 15px;
     margin-right: auto;
@@ -79,15 +80,25 @@ p {
 
 /* Small */
 @media (min-width: 768px) {
-    .container {
+    .container,
+    .scrollable-container {
         width: 750px;
     }
 }
 
 /* Medium */
 @media (min-width: 992px) {
-    .container {
+    .container{
         width: 970px;
+    }
+    
+    .scrollable-container {
+        width: unset;
+
+        /* 
+        * 940 = width of .container (970px) - 30px (Default padding, 15px right and left)
+        */
+        padding-left: calc(calc(100% - 940px) / 2);
     }
 }
 
@@ -95,6 +106,13 @@ p {
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
+    }
+
+    .scrollable-container {
+        /* 
+        * 1140 = width of .container (1170px) - 30px (Default padding, 15px right and left)
+        */
+        padding-left: calc(calc(100% - 1140px) / 2);
     }
 }
 
@@ -445,9 +463,9 @@ header nav .sign-in a {
     padding-bottom: var(--section-padding);
 }
 
-.testimonials .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.testimonials .scrollable-container {
+    display: flex;
+    flex-flow: column wrap;
     gap: 35px;
 }
 
@@ -494,6 +512,26 @@ header nav .sign-in a {
     font-weight: 700;
 }
 
+@media (min-width: 992px) {
+    .testimonials .scrollable-container {
+        flex-flow: nowrap row;
+        overflow: auto;
+        
+        /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .testimonials .scrollable-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .testimonials .testimonial {
+        flex: 0 0 auto;
+        max-width: calc(calc(1140px - 70px) / 3);
+    }
+}
 
 /***************/
 /*   Footer   */
